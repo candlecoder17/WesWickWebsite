@@ -46,6 +46,9 @@
             <span class="next" onclick="changeSlide(1)">&#10095;</span>
         </div>
     </section>
+    <section class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search for candles..." onkeyup="filterProducts()">
+    </section>
     <main>
         <section class="products">
             <div class="product">
@@ -91,6 +94,20 @@
             cart.push(productName);
             alert(`${productName} added to your cart!`);
             console.log("Cart:", cart);
+        }
+
+        function filterProducts() {
+            const searchInput = document.getElementById("searchInput").value.toLowerCase();
+            const products = document.querySelectorAll(".product");
+
+            products.forEach(product => {
+                const productName = product.querySelector("h2").textContent.toLowerCase();
+                if (productName.includes(searchInput)) {
+                    product.style.display = "";
+                } else {
+                    product.style.display = "none";
+                }
+            });
         }
     </script>
 </body>

@@ -9,12 +9,14 @@ body {
     color: #333;
 }
 
-/* Header */
+/* Sticky Navigation Bar */
 header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     background-color: #ffcc99;
-    padding: 20px;
-    text-align: center;
-    border-bottom: 3px solid #e69559;
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
@@ -103,6 +105,27 @@ nav a:hover {
     border-radius: 50%;
 }
 
+/* Search Bar */
+.search-bar {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.search-bar input {
+    width: 80%;
+    max-width: 400px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #e69559;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.search-bar input:focus {
+    border-color: #d1844a;
+}
+
 /* Products Section */
 .products {
     display: flex;
@@ -120,6 +143,12 @@ nav a:hover {
     text-align: center;
     background-color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .product h2 {
