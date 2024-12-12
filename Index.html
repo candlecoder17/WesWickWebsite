@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wes’s Wicks CandleCo</title>
+    <link rel="stylesheet" href="style.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXX-X"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-XXXXXXX-X');
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Wes’s Wicks CandleCo</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <section class="hero">
+        <h2>Discover Your Perfect Scent</h2>
+        <p>Handcrafted candles to elevate your space.</p>
+        <button onclick="window.location.href='about.html'">Learn More</button>
+    </section>
+    <main>
+        <section class="products">
+            <div class="product">
+                <h2>Vanilla Bliss</h2>
+                <p>A soothing vanilla-scented candle.</p>
+                <p>$12.99</p>
+                <button onclick="addToCart('Vanilla Bliss')">Add to Cart</button>
+            </div>
+            <div class="product">
+                <h2>Lavender Dreams</h2>
+                <p>Relax with calming lavender.</p>
+                <p>$14.99</p>
+                <button onclick="addToCart('Lavender Dreams')">Add to Cart</button>
+            </div>
+            <div class="product">
+                <h2>Citrus Burst</h2>
+                <p>A refreshing citrus aroma.</p>
+                <p>$10.99</p>
+                <button onclick="addToCart('Citrus Burst')">Add to Cart</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Wes’s Wicks CandleCo. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com" target="_blank">Instagram</a>
+            <a href="https://www.facebook.com" target="_blank">Facebook</a>
+            <a href="https://www.pinterest.com" target="_blank">Pinterest</a>
+        </div>
+    </footer>
+    <script>
+        let cart = [];
+
+        function addToCart(productName) {
+            cart.push(productName);
+            alert(`${productName} added to your cart!`);
+            console.log("Cart:", cart);
+        }
+    </script>
+</body>
+</html>
