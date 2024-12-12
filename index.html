@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wes’s Wicks CandleCo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Gudea:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <!-- Google tag (gtag.js) -->
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PGFH8WPZ8T"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -16,99 +17,36 @@
 </head>
 <body>
     <header>
-        <h1>Welcome to Wes’s Wicks CandleCo</h1>
+        <h1>Wes’s Wicks CandleCo</h1>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
         </nav>
     </header>
-    <section class="hero">
+    <section id="hero">
         <div class="carousel">
-            <div class="slide active" style="background-image: url('https://via.placeholder.com/1200x400');">
-                <h2>Discover Your Perfect Scent</h2>
-                <p>Handcrafted candles to elevate your space.</p>
-                <button onclick="window.location.href='about.html'">Learn More</button>
+            <div class="slide active">
+                <img src="images/candle1.jpg" alt="Candle 1">
+                <p>Handcrafted Elegance</p>
             </div>
-            <div class="slide" style="background-image: url('https://via.placeholder.com/1200x400/FFCC99');">
-                <h2>Seasonal Favorites</h2>
-                <p>Warm up your home with our fall collection.</p>
-                <button onclick="window.location.href='index.html'">Shop Now</button>
+            <div class="slide">
+                <img src="images/candle2.jpg" alt="Candle 2">
+                <p>Perfect for Every Occasion</p>
             </div>
-            <div class="slide" style="background-image: url('https://via.placeholder.com/1200x400/FFAA88');">
-                <h2>Buy One, Get One Free!</h2>
-                <p>Limited-time offer on select candles.</p>
-                <button onclick="window.location.href='index.html'">Explore Deals</button>
+            <div class="slide">
+                <img src="images/candle3.jpg" alt="Candle 3">
+                <p>Warm Your Space with Love</p>
             </div>
         </div>
-        <div class="controls">
-            <span class="prev" onclick="changeSlide(-1)">&#10094;</span>
-            <span class="next" onclick="changeSlide(1)">&#10095;</span>
-        </div>
+        <button class="carousel-button prev">❮</button>
+        <button class="carousel-button next">❯</button>
     </section>
-    <section class="search-bar">
-        <input type="text" id="searchInput" placeholder="Search for candles..." onkeyup="filterProducts()">
-    </section>
-    <main>
-        <section class="products">
-            <div class="product">
-                <h2>Vanilla Bliss</h2>
-                <p>A soothing vanilla-scented candle.</p>
-                <p>$12.99</p>
-                <button onclick="addToCart('Vanilla Bliss')">Add to Cart</button>
-            </div>
-            <div class="product">
-                <h2>Lavender Dreams</h2>
-                <p>Relax with calming lavender.</p>
-                <p>$14.99</p>
-                <button onclick="addToCart('Lavender Dreams')">Add to Cart</button>
-            </div>
-            <div class="product">
-                <h2>Citrus Burst</h2>
-                <p>A refreshing citrus aroma.</p>
-                <p>$10.99</p>
-                <button onclick="addToCart('Citrus Burst')">Add to Cart</button>
-            </div>
-        </section>
-    </main>
     <footer>
-        <p>&copy; 2024 Wes’s Wicks CandleCo. All rights reserved.</p>
-        <div class="social-icons">
-            <a href="https://www.instagram.com" target="_blank">Instagram</a>
-            <a href="https://www.facebook.com" target="_blank">Facebook</a>
-            <a href="https://www.pinterest.com" target="_blank">Pinterest</a>
-        </div>
+        <p>&copy; 2024 Wes’s Wicks CandleCo. All Rights Reserved.</p>
     </footer>
-    <script>
-        let cart = [];
-        const slides = document.querySelectorAll(".slide");
-        let currentSlide = 0;
-
-        function changeSlide(direction) {
-            slides[currentSlide].classList.remove("active");
-            currentSlide = (currentSlide + direction + slides.length) % slides.length;
-            slides[currentSlide].classList.add("active");
-        }
-
-        function addToCart(productName) {
-            cart.push(productName);
-            alert(`${productName} added to your cart!`);
-            console.log("Cart:", cart);
-        }
-
-        function filterProducts() {
-            const searchInput = document.getElementById("searchInput").value.toLowerCase();
-            const products = document.querySelectorAll(".product");
-
-            products.forEach(product => {
-                const productName = product.querySelector("h2").textContent.toLowerCase();
-                if (productName.includes(searchInput)) {
-                    product.style.display = "";
-                } else {
-                    product.style.display = "none";
-                }
-            });
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
