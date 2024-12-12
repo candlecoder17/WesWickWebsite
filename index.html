@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wes’s Wicks CandleCo</title>
     <link rel="stylesheet" href="style.css">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXX-X"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PGFH8WPZ8T"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-XXXXXXX-X');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-PGFH8WPZ8T');
     </script>
 </head>
 <body>
@@ -23,9 +24,27 @@
         </nav>
     </header>
     <section class="hero">
-        <h2>Discover Your Perfect Scent</h2>
-        <p>Handcrafted candles to elevate your space.</p>
-        <button onclick="window.location.href='about.html'">Learn More</button>
+        <div class="carousel">
+            <div class="slide active" style="background-image: url('https://via.placeholder.com/1200x400');">
+                <h2>Discover Your Perfect Scent</h2>
+                <p>Handcrafted candles to elevate your space.</p>
+                <button onclick="window.location.href='about.html'">Learn More</button>
+            </div>
+            <div class="slide" style="background-image: url('https://via.placeholder.com/1200x400/FFCC99');">
+                <h2>Seasonal Favorites</h2>
+                <p>Warm up your home with our fall collection.</p>
+                <button onclick="window.location.href='index.html'">Shop Now</button>
+            </div>
+            <div class="slide" style="background-image: url('https://via.placeholder.com/1200x400/FFAA88');">
+                <h2>Buy One, Get One Free!</h2>
+                <p>Limited-time offer on select candles.</p>
+                <button onclick="window.location.href='index.html'">Explore Deals</button>
+            </div>
+        </div>
+        <div class="controls">
+            <span class="prev" onclick="changeSlide(-1)">&#10094;</span>
+            <span class="next" onclick="changeSlide(1)">&#10095;</span>
+        </div>
     </section>
     <main>
         <section class="products">
@@ -59,6 +78,14 @@
     </footer>
     <script>
         let cart = [];
+        const slides = document.querySelectorAll(".slide");
+        let currentSlide = 0;
+
+        function changeSlide(direction) {
+            slides[currentSlide].classList.remove("active");
+            currentSlide = (currentSlide + direction + slides.length) % slides.length;
+            slides[currentSlide].classList.add("active");
+        }
 
         function addToCart(productName) {
             cart.push(productName);

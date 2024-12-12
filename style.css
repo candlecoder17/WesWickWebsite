@@ -33,27 +33,43 @@ nav a:hover {
     color: #e69559;
 }
 
-/* Hero Section */
-.hero {
-    background-image: url('https://via.placeholder.com/1200x400'); /* Replace with your own banner image URL */
-    background-size: cover;
-    background-position: center;
+/* Hero Section Carousel */
+.carousel {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
     text-align: center;
     color: white;
+}
+
+.carousel .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     padding: 50px 20px;
 }
 
-.hero h2 {
+.carousel .slide.active {
+    display: flex;
+}
+
+.carousel h2 {
     font-size: 2.5rem;
     margin-bottom: 10px;
 }
 
-.hero p {
+.carousel p {
     font-size: 1.2rem;
     margin-bottom: 20px;
 }
 
-.hero button {
+.carousel button {
     background-color: #e69559;
     color: white;
     border: none;
@@ -63,8 +79,28 @@ nav a:hover {
     border-radius: 5px;
 }
 
-.hero button:hover {
+.carousel button:hover {
     background-color: #d1844a;
+}
+
+/* Carousel Controls */
+.controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.controls span {
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 10px;
+    color: white;
+    user-select: none;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
 }
 
 /* Products Section */
