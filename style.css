@@ -1,193 +1,76 @@
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
+/* General styles */
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
-    color: #333;
+    box-sizing: border-box;
 }
 
-/* Sticky Navigation Bar */
 header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
     background-color: #ffcc99;
-    padding: 10px 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
 }
 
-header h1 {
-    font-size: 2.5rem;
-    color: #333;
-}
-
-nav a {
-    margin: 0 15px;
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-}
-
-nav a:hover {
-    color: #e69559;
-}
-
-/* Hero Section Carousel */
-.carousel {
-    position: relative;
-    height: 400px;
-    overflow: hidden;
-    text-align: center;
-    color: white;
-}
-
-.carousel .slide {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    display: none;
-    align-items: center;
+nav ul {
+    list-style: none;
+    display: flex;
     justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #000;
+}
+
+.hero {
     text-align: center;
-    padding: 50px 20px;
+    background: #f2f2f2;
+    padding: 50px 0;
 }
 
-.carousel .slide.active {
-    display: flex;
+.hero h1 {
+    font-size: 2.5em;
+    color: #333;
 }
 
-.carousel h2 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-}
-
-.carousel p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-}
-
-.carousel button {
-    background-color: #e69559;
+.hero button {
+    background-color: #ff9966;
     color: white;
-    border: none;
     padding: 10px 20px;
-    font-size: 1rem;
-    cursor: pointer;
+    border: none;
     border-radius: 5px;
-}
-
-.carousel button:hover {
-    background-color: #d1844a;
-}
-
-/* Carousel Controls */
-.controls {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
-}
-
-.controls span {
-    font-size: 2rem;
     cursor: pointer;
-    padding: 10px;
-    color: white;
-    user-select: none;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 50%;
 }
 
-/* Search Bar */
-.search-bar {
-    text-align: center;
-    margin: 20px 0;
-}
-
-.search-bar input {
-    width: 80%;
-    max-width: 400px;
-    padding: 10px;
-    font-size: 1rem;
-    border: 2px solid #e69559;
-    border-radius: 5px;
-    outline: none;
-    transition: border-color 0.3s ease;
-}
-
-.search-bar input:focus {
-    border-color: #d1844a;
-}
-
-/* Products Section */
-.products {
+/* Candle gallery */
+.candle-gallery {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 20px;
     padding: 20px;
-    gap: 15px;
+    background: #fff;
 }
 
-.product {
-    border: 2px solid #e69559;
+.candle-image {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
     border-radius: 8px;
-    padding: 15px;
-    width: 200px;
-    text-align: center;
-    background-color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.product:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-.product h2 {
-    font-size: 1.5rem;
-    color: #e69559;
-}
-
-button {
-    background-color: #e69559;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-}
-
-button:hover {
-    background-color: #d1844a;
 }
 
 /* Footer */
 footer {
-    background-color: #333;
-    color: white;
     text-align: center;
-    padding: 10px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-
-.social-icons a {
-    margin: 0 10px;
-    text-decoration: none;
-    color: white;
-    font-size: 1.1rem;
-}
-
-.social-icons a:hover {
-    text-decoration: underline;
+    background-color: #ffcc99;
+    padding: 20px;
+    margin-top: 20px;
 }
